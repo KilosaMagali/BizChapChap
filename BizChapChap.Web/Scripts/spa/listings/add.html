@@ -1,0 +1,22 @@
+﻿<div class="container">
+    <div>Your listing</div>
+    <div>
+        <div>Category</div>
+        <div>
+            <select name="CategorySelect" 
+                    ng-model="listing.CategoryRefId" 
+                    ng-change="categoryChanged()"
+                    ng-options="option.Id as option.Name for option in categories">
+            </select>
+        </div>
+    </div>
+    
+    <div ng-show="isCategorySelected">
+        <div>Sub category</div>
+        <div>
+            <select name="SubCategorySelect"
+                    ng-model="listing.SubCategoryRefId"
+                    ng-options="option.Id as option.Name for option in subcategories"></select>
+        </div>
+    </div>
+</div>

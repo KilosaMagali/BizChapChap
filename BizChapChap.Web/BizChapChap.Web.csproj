@@ -205,6 +205,10 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Infrastructure\Validators\CategoryViewModelValidator.cs" />
     <Compile Include="Infrastructure\Validators\SubCategoryViewModelValidator.cs" />
+    <Compile Include="Migrations\201702262109297_ColumnTitleToListing.cs" />
+    <Compile Include="Migrations\201702262109297_ColumnTitleToListing.Designer.cs">
+      <DependentUpon>201702262109297_ColumnTitleToListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -258,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\spa\account\account.css" />
+    <Content Include="Scripts\spa\listings\add.html" />
+    <Content Include="Scripts\spa\listings\listingadd.css" />
+    <Content Include="Scripts\spa\listings\listingAddCtrl.js" />
     <Content Include="Scripts\spa\upload\fileUpload.css" />
     <Content Include="Scripts\vendors\angular-css.js" />
     <Content Include="Scripts\vendors\angular-file-upload-shim.js" />
@@ -355,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702242244412_AddedPasswordToSeller.resx">
       <DependentUpon>201702242244412_AddedPasswordToSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702262109297_ColumnTitleToListing.resx">
+      <DependentUpon>201702262109297_ColumnTitleToListing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

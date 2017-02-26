@@ -21,7 +21,13 @@ app.config(
                 templateUrl: "scripts/spa/account/register.html",
                 controller: "registerCtrl",
                 css: "scripts/spa/account/account.css"
-            }).otherwise({ redirectTo: "/" });
+            })
+            .when("/listingadd", {
+                templateUrl: "scripts/spa/listings/add.html",
+                controller: "listingAddCtrl",
+                css: "scripts/spa/listings/listingadd.css"
+            })
+            .otherwise({ redirectTo: "/" });
     }
 );
 

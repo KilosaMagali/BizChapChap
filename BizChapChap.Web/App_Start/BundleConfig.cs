@@ -35,7 +35,8 @@ namespace BizChapChap.Web
                 "~/Scripts/spa/home/indexCtrl.js",
                 "~/Scripts/spa/services/apiService.js",
                 "~/Scripts/spa/account/loginCtrl.js",
-                "~/Scripts/spa/upload/fileUploadCtrl.js"
+                "~/Scripts/spa/upload/fileUploadCtrl.js",
+                "~/Scripts/spa/listings/listingAddCtrl.js"
                 ));
 
            

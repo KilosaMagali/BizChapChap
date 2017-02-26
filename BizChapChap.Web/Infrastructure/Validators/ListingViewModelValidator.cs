@@ -18,6 +18,9 @@ namespace BizChapChap.Web.Infrastructure.Validators
             RuleFor(listing => listing.Description).NotEmpty()
                 .WithMessage("Add a short description");
 
+            RuleFor(listing => listing.Title).NotEmpty()
+                 .WithMessage("Add a title");
+
         }
     }
 }

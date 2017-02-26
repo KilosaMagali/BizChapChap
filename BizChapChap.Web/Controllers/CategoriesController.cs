@@ -41,13 +41,13 @@ namespace BizChapChap.Web.Controllers
         }
 
         [AllowAnonymous]
-        [Route("subcategories")]
-        public HttpResponseMessage GetSubCategories(HttpRequestMessage request)
+        [Route("subcategory/{id:int}")]
+        public HttpResponseMessage GetSubCategories(HttpRequestMessage request, int id)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var subCategories = _subCategoryRepository.GetAll().ToList();
+                var subCategories = _subCategoryRepository.FindBy(p => p.CategoryRefId == id).ToList();
 
                 IEnumerable<SubCategoryViewModel> subCategoriesVM = Mapper.Map<IEnumerable<SubCategory>, IEnumerable<SubCategoryViewModel>>(subCategories);
 
