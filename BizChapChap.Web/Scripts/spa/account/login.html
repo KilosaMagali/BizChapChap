@@ -1,0 +1,17 @@
+﻿<div class="row">
+    <form class="form-signin" role="form" name="userLoginForm" ng-submit="login()">
+        <h3 class="form-signin-heading">Sign in</h3>
+        <div class="form-group">
+            <label for="inputUsername" class="sr-only">Email</label>
+            <input type="text" id="inputUsername" name="inputUsername" class="form-control" ng-model="user.username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="inputPassword" class="form-control" ng-model="user.password" placeholder="Password">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <div class="pull-right">
+            <a ng-href="#/register" class="control-label">Register</a>
+        </div>
+    </form>
+</div>
