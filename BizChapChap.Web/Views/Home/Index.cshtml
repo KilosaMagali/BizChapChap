@@ -26,8 +26,8 @@
         </div>
     </nav>
 
-    <div>Logged in as {{loggedUser.username}}</div>
-    <div ng-view>
+    <div ng-show="false">Logged in as {{loggedUser.username}}</div>
+    <div class="container" ng-view>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
