@@ -256,6 +256,12 @@
     <Compile Include="ViewModels\SubCategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\img_thumbnail_carback.png" />
+    <Content Include="Content\img\img_thumbnail_carfront.png" />
+    <Content Include="Content\img\img_thumbnail_carfrontside.png" />
+    <Content Include="Content\img\img_thumbnail_carinterior.png" />
+    <Content Include="Content\img\img_thumbnail_carside.png" />
+    <Content Include="Content\img\img_thumbnail_carsidefront.png" />
     <Content Include="Scripts\spa\account\account.css" />
     <Content Include="Scripts\spa\listings\add.html" />
     <Content Include="Scripts\spa\listings\listingadd.css" />

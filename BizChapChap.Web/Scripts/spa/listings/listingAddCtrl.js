@@ -14,7 +14,18 @@
         $scope.subcategories = [];
         $scope.isCategorySelected = false;
 
+        //Upload thumbnails
+        $scope.ImagePreviewSrc1 = "/Content/img/img_thumbnail_carfront.png"
+        $scope.ImagePreviewSrc2 = "/Content/img/img_thumbnail_carback.png"
+        $scope.ImagePreviewSrc3 = "/Content/img/img_thumbnail_carfrontside.png"
+        $scope.ImagePreviewSrc4 = "/Content/img/img_thumbnail_carsidefront.png"
+        $scope.ImagePreviewSrc5 = "/Content/img/img_thumbnail_carside.png"
+        $scope.ImagePreviewSrc6 = "/Content/img/img_thumbnail_carinterior.png"
+
+
         var listingImages = [];
+
+
 
         function addListing() {
             apiService.post('/api/listings/add', $scope.listing,

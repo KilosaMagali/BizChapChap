@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #f3f3f3;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -20,8 +21,9 @@ textarea {
 /*Bootstrap overrides*/
 
 .navbar-inverse {
-    background-color: #ff4342;
+    background-color: #7d1935;
     border-color: #080808;
+    
 }
 
 .navbar-inverse .navbar-brand {
