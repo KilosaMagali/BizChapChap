@@ -10,17 +10,19 @@
         $scope.addListing = addListing;
         $scope.loadSubCategories = loadSubCategories;
         $scope.categoryChanged = categoryChanged;
+        $scope.showImagePreview = showImagePreview;
+        $scope.FilesToUpload = [];
         $scope.categories = [];
         $scope.subcategories = [];
         $scope.isCategorySelected = false;
 
         //Upload thumbnails
-        $scope.ImagePreviewSrc1 = "/Content/img/img_thumbnail_carfront.png"
-        $scope.ImagePreviewSrc2 = "/Content/img/img_thumbnail_carback.png"
-        $scope.ImagePreviewSrc3 = "/Content/img/img_thumbnail_carfrontside.png"
-        $scope.ImagePreviewSrc4 = "/Content/img/img_thumbnail_carsidefront.png"
-        $scope.ImagePreviewSrc5 = "/Content/img/img_thumbnail_carside.png"
-        $scope.ImagePreviewSrc6 = "/Content/img/img_thumbnail_carinterior.png"
+        $scope.ImagePreviewSrc1 = "/Content/img/CameraIcon.png"
+        $scope.ImagePreviewSrc2 = "/Content/img/CameraIcon.png"
+        $scope.ImagePreviewSrc3 = "/Content/img/CameraIcon.png"
+        $scope.ImagePreviewSrc4 = "/Content/img/CameraIcon.png"
+        $scope.ImagePreviewSrc5 = "/Content/img/CameraIcon.png"
+        $scope.ImagePreviewSrc6 = "/Content/img/CameraIcon.png"
 
 
         var listingImages = [];
@@ -31,6 +33,20 @@
             apiService.post('/api/listings/add', $scope.listing,
             addListingSucceded,
             addListingFailed);
+        }
+
+        function showImagePreview(input) {
+            console.log("Previewing " + input.length);
+
+            if (input && input.length > 0) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $scope.ImagePreviewSrc1 = '';
+                    $scope.ImagePreviewSrc1 = e.target.result;
+                }
+
+                reader.readAsDataURL(input[0]);
+            }
         }
 
 

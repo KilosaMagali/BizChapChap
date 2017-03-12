@@ -28,6 +28,31 @@
     border:none;
 }
 
+.hiddenbrowsebutton {
+    opacity: 0;
+    margin-top: -50px;
+}
+
+.img-preview {
+    opacity: 0.5;
+    width: 75%;
+    height: 75%;
+    margin-top:10px;
+}
+.form-control {
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 2.0;
+}
+
+.btn {
+    margin-top: 50px;
+    border-radius: 0;
+    padding: .25em 1em;
+    line-height: 2em;
+    font-size: 20px;
+}
+
 
 
 

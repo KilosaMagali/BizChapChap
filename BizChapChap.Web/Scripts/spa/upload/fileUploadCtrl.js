@@ -6,7 +6,6 @@
     {
         $scope.upload = [];
         $scope.UploadedFiles = [];
-        $scope.FilesToUpload = [];
         $scope.ImagePreviewSrc = 'http://farm4.static.flickr.com/3316/3546531954_eef60a3d37.jpg';
         $scope.Images = [];
         $scope.ImageToFetch = '';

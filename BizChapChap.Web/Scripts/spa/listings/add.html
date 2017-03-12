@@ -44,34 +44,59 @@
                 <h3 class="page-header">Listing Photos</h3>
 
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
-                    <a class="main-img-preview">
-                        <img class="thumbnail img-preview" src="{{ImagePreviewSrc1}}" title="Click to upload">
-                    </a>
-                </div>
-                <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="{{ImagePreviewSrc2}}" title="Click to upload">
+                        <label for="image1">
+                            <img class="thumbnail img-preview" 
+                                 src="{{ImagePreviewSrc1}}" 
+                                 title="Click to upload">
+                        </label>
+                        <input class="hiddenbrowsebutton" 
+                               accept="image/*" 
+                               ng-model="ImagePreviewSrc1" 
+                               ng-change="showImagePreview(ImagePreviewSrc1)"
+                               type="file"
+                               id="image1" />
                     </div>
                 </div>
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="{{ImagePreviewSrc3}}" title="Click to upload">
+                        <label for="image2">
+                            <img class="thumbnail img-preview"  src="{{ImagePreviewSrc2}}" title="Click to upload">
+                        </label>
+                        <input class="hiddenbrowsebutton" type="file" id="image2"/>
+                    </div>
+                </div>
+                <div class="form-group col-lg-4 col-sm-4 col-xs-6">
+                    <div class="main-img-preview">
+                        <label for="image3">
+                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc3}}" title="Click to upload">
+                        </label>
+                        <input class="hiddenbrowsebutton" type="file" id="image3" />
                     </div>
                 </div>
 
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="{{ImagePreviewSrc4}}" title="Click to upload">
+                        <label for="image4">
+                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc4}}" title="Click to upload">
+                        </label>
+                        <input class="hiddenbrowsebutton" type="file" id="image4" />
                     </div>
                 </div>
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="{{ImagePreviewSrc5}}" title="Click to upload">
+                        <label for="image5">
+                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc5}}" title="Click to upload">
+                        </label>
+                        <input class="hiddenbrowsebutton" type="file" id="image5" />
                     </div>
                 </div>
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
-                        <img class="thumbnail img-preview" src="{{ImagePreviewSrc6}}" title="Click to upload">
+                        <label for="image6">
+                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc6}}" title="Click to upload">
+                        </label>
+                        <input class="hiddenbrowsebutton" type="file" id="image6" />
                     </div>
                 </div>
 
@@ -90,11 +115,21 @@
                 <div class="form-group">
                     <input type="text" placeholder="Phone Number" class="form-control" />
                 </div>
-                <div class="form-inline">
-                    <input type="text" placeholder="Password" class="form-control password" />
-                    <input type="text" placeholder="Confirm Password" class="form-control password" />
+                <div class="form-group">
+                    <div class="form-inline">
+                        <input type="text" placeholder="Password" class="form-control password" />
+                        <input type="text" placeholder="Confirm Password" class="form-control password" />
+                    </div>
                 </div>
             </section>
+        </div>
+
+        <div class="row container">
+            <div class="form-group">
+                <div class="col-lg-4 col-sm-4 col-xs-6 col-centered">
+                    <button class="btn btn-block btn-success" type="submit">SUBMIT AD</button>
+                </div>
+            </div>
         </div>
     </form>
 </div>

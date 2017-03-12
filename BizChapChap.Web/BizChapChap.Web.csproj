@@ -256,6 +256,7 @@
     <Compile Include="ViewModels\SubCategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\CameraIcon.png" />
     <Content Include="Content\img\img_thumbnail_carback.png" />
     <Content Include="Content\img\img_thumbnail_carfront.png" />
     <Content Include="Content\img\img_thumbnail_carfrontside.png" />
