@@ -28,6 +28,7 @@ namespace BizChapChap.Web.Models
         public IDbSet<Seller> Seller { get; set; }
         public IDbSet<SellerType> SellerType { get; set; }
         public IDbSet<Error> Error { get; set; }
+        public IDbSet<Region> Region { get; set; }
         #endregion
 
         public ApplicationDbContext()

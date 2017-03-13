@@ -5,7 +5,8 @@ app.config(
         $routeProvider
             .when("/", {
                 templateUrl: "scripts/spa/home/index.html",
-                controller: "indexCtrl"
+                controller: "indexCtrl",
+                css: "scripts/spa/home/home.css"
             })
             .when("/login", {
                 templateUrl: "scripts/spa/account/login.html",

@@ -196,6 +196,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListingsController.cs" />
+    <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Infrastructure\Validators\CategoryViewModelValidator.cs" />
@@ -204,6 +205,11 @@
     <Compile Include="Migrations\201702262109297_ColumnTitleToListing.Designer.cs">
       <DependentUpon>201702262109297_ColumnTitleToListing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703132114596_RegionAdded.cs" />
+    <Compile Include="Migrations\201703132114596_RegionAdded.Designer.cs">
+      <DependentUpon>201703132114596_RegionAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Region.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -263,7 +269,9 @@
     <Content Include="Content\img\img_thumbnail_carinterior.png" />
     <Content Include="Content\img\img_thumbnail_carside.png" />
     <Content Include="Content\img\img_thumbnail_carsidefront.png" />
+    <Content Include="Content\img\main-bg.jpg" />
     <Content Include="Scripts\spa\account\account.css" />
+    <Content Include="Scripts\spa\home\home.css" />
     <Content Include="Scripts\spa\listings\add.html" />
     <Content Include="Scripts\spa\listings\listingadd.css" />
     <Content Include="Scripts\spa\listings\listingAddCtrl.js" />
@@ -367,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702262109297_ColumnTitleToListing.resx">
       <DependentUpon>201702262109297_ColumnTitleToListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703132114596_RegionAdded.resx">
+      <DependentUpon>201703132114596_RegionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

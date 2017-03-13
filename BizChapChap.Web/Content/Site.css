@@ -4,6 +4,10 @@
     background-color: #f3f3f3;
 }
 
+a, a:active, a:focus {
+    outline: none;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -30,3 +34,28 @@ textarea {
     color: #fff;
     left: -50px;
 }
+
+
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+        padding: 5px 10px 0px 10px;
+    }
+
+#pright {
+    margin-right: -50px;
+    padding: 10px 10px 0px 0px;
+}
+
+#button_post_add {
+    background-color: #d00;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+}
+
+#right_vertical_line 
+{
+    border-right: solid 1px #fff;
+}
+

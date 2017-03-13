@@ -1,1 +1,12 @@
-﻿
+﻿<div class="row container" id="header">
+        <form class="form-inline" role="form">
+            <select class="form-control"
+                    ng-model="searchItem.Id"
+                    ng-options="option.Id as option.Name for option in regions"/>
+            <input type="text" class="form-control" placeholder="Looking for ....">
+            <select class="form-control" 
+                    ng-model="searchItem.CategoryRefId"
+                    ng-options="option.Id as option.Name for option in categories" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+</div>
