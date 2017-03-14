@@ -10,3 +10,39 @@
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
 </div>
+
+<div class="row container">
+    <label class="page-header">Browse Categories</label>
+    <div class="container">
+        <div class="col-lg-3 col-md-3 col-sm-4 categoryblock" ng-repeat="category in categories|limitTo:7">
+            <div class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="https://static.pexels.com/photos/3658/street-car-power-fast-large.jpg" alt="" class="img-responsive">
+                        <div class="carousel-caption">
+                            <h3>{{category.Name}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 categoryblock">
+            <div class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="https://static.pexels.com/photos/3658/street-car-power-fast-large.jpg" alt="" class="img-responsive moreitems">
+                        <div class="carousel-caption">
+                            <h3><a href="#" class="btn btn-danger">More ...</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row container">
+    <label class="page-header">Featured listings</label>
+</div>

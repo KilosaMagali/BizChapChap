@@ -4,3 +4,16 @@
     line-height: 100px;
     border-radius: 5px;
 }
+
+/*Caption at the bottom*/
+.carousel-caption {
+    
+}
+
+.categoryblock{
+    margin-bottom:10px;
+}
+
+.moreitems {
+    opacity: 0.5;
+}
