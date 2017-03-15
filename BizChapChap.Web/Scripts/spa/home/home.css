@@ -27,14 +27,14 @@
 {
     .form-control {
         width: 100%;
-        margin:10px;
-        display:list-item;
+        margin: 10px 20px 0px 0px;
+        display: list-item;
     }
 
     .btn {
         display: block;
         width: 100%;
-        margin: 10px;
+        margin: 10px 0px 20px 0px;
     }
 }
 
