@@ -315,6 +315,7 @@
     <Content Include="Scripts\vendors\bower_components\angular-route\LICENSE.md" />
     <Content Include="Scripts\vendors\bower_components\angular-route\package.json" />
     <Content Include="Scripts\vendors\bower_components\angular-route\README.md" />
+    <None Include="Properties\PublishProfiles\bizchapchap.com - Web Deploy.pubxml" />
     <None Include="Scripts\vendors\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\vendors\bower_components\angular\angular-csp.css" />
     <Content Include="Scripts\vendors\bower_components\angular\angular.js" />

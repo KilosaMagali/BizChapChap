@@ -18,7 +18,7 @@ a, a:active, a:focus {
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100%;
 }
 
 
@@ -49,6 +49,7 @@ textarea {
 
 #button_post_add {
     background-color: #d00;
+    height:30px;
     border-radius: 0;
     border: none;
     color: #fff;

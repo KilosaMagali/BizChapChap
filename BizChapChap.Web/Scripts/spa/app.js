@@ -1,7 +1,9 @@
 ﻿var app = angular.module("bizChapChap", ['ngRoute', 'ngFileUpload', 'angularCSS']);
 
 app.config(
-    function ($routeProvider) {
+    function ($routeProvider, $locationProvider) {
+        //url prefix
+        $locationProvider.hashPrefix('');
         $routeProvider
             .when("/", {
                 templateUrl: "scripts/spa/home/index.html",
@@ -29,6 +31,8 @@ app.config(
                 css: "scripts/spa/listings/listingadd.css"
             })
             .otherwise({ redirectTo: "/" });
+
+        
     }
 );
 

@@ -3,7 +3,6 @@
    
 }
 
-
 .col-centered{
     float: none;
     margin: 0 auto;
@@ -45,7 +44,7 @@
     line-height: 2.0;
 }
 
-.btn {
+#button_submitad {
     margin-top: 50px;
     border-radius: 0;
     padding: .25em 1em;
