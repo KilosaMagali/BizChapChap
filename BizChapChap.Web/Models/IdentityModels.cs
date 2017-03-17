@@ -32,7 +32,7 @@ namespace BizChapChap.Web.Models
         #endregion
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("BizChapChapConnection", throwIfV1Schema: false)
         {
         }
         

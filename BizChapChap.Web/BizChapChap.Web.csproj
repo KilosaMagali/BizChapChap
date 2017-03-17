@@ -201,14 +201,11 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Infrastructure\Validators\CategoryViewModelValidator.cs" />
     <Compile Include="Infrastructure\Validators\SubCategoryViewModelValidator.cs" />
-    <Compile Include="Migrations\201702262109297_ColumnTitleToListing.cs" />
-    <Compile Include="Migrations\201702262109297_ColumnTitleToListing.Designer.cs">
-      <DependentUpon>201702262109297_ColumnTitleToListing.cs</DependentUpon>
+    <Compile Include="Migrations\201703172042445_Started afresh.cs" />
+    <Compile Include="Migrations\201703172042445_Started afresh.Designer.cs">
+      <DependentUpon>201703172042445_Started afresh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703132114596_RegionAdded.cs" />
-    <Compile Include="Migrations\201703132114596_RegionAdded.Designer.cs">
-      <DependentUpon>201703132114596_RegionAdded.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Region.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,23 +221,6 @@
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
-    <Compile Include="Migrations\201702012235313_InitialCreate.cs" />
-    <Compile Include="Migrations\201702012235313_InitialCreate.Designer.cs">
-      <DependentUpon>201702012235313_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702232025590_Initial.cs" />
-    <Compile Include="Migrations\201702232025590_Initial.Designer.cs">
-      <DependentUpon>201702232025590_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702242130127_ErrorClassAdded.cs" />
-    <Compile Include="Migrations\201702242130127_ErrorClassAdded.Designer.cs">
-      <DependentUpon>201702242130127_ErrorClassAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702242244412_AddedPasswordToSeller.cs" />
-    <Compile Include="Migrations\201702242244412_AddedPasswordToSeller.Designer.cs">
-      <DependentUpon>201702242244412_AddedPasswordToSeller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -262,6 +242,10 @@
     <Compile Include="ViewModels\SubCategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\BizChapChapDB.mdf" />
+    <Content Include="App_Data\BizChapChapDB_log.ldf">
+      <DependentUpon>BizChapChapDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\img\CameraIcon.png" />
     <Content Include="Content\img\img_thumbnail_carback.png" />
     <Content Include="Content\img\img_thumbnail_carfront.png" />
@@ -345,7 +329,6 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Entities\" />
     <Folder Include="Scripts\spa\modules\" />
     <Folder Include="Uploads\" />
@@ -362,23 +345,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702012235313_InitialCreate.resx">
-      <DependentUpon>201702012235313_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702232025590_Initial.resx">
-      <DependentUpon>201702232025590_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702242130127_ErrorClassAdded.resx">
-      <DependentUpon>201702242130127_ErrorClassAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702242244412_AddedPasswordToSeller.resx">
-      <DependentUpon>201702242244412_AddedPasswordToSeller.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702262109297_ColumnTitleToListing.resx">
-      <DependentUpon>201702262109297_ColumnTitleToListing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703132114596_RegionAdded.resx">
-      <DependentUpon>201703132114596_RegionAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703172042445_Started afresh.resx">
+      <DependentUpon>201703172042445_Started afresh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
