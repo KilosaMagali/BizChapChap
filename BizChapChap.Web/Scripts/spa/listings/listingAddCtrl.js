@@ -3,13 +3,14 @@
 
     app.controller('listingAddCtrl', listingAddCtrl);
 
-    listingAddCtrl.$inject = ['$scope', '$rootScope', 'apiService'];
+    listingAddCtrl.$inject = ['$scope', '$rootScope', 'apiService', 'fileUploadService'];
 
-    function listingAddCtrl($scope, $rootScope, apiService) {
-        $scope.listing = { CategoryRefId: 0, SubCategoryRefId: 0, Date: new Date() };
+    function listingAddCtrl($scope, $rootScope, apiService, fileUploadService) {
+        $scope.listing = { CategoryRefId: 0, SubCategoryRefId: 0, Date: new Date(), CurrencyRefId:1 };
         $scope.addListing = addListing;
         $scope.loadSubCategories = loadSubCategories;
         $scope.categoryChanged = categoryChanged;
+        $scope.isValidSource = isValidSource;
         $scope.showImagePreview = showImagePreview;
         $scope.FilesToUpload = [];
         $scope.categories = [];
@@ -17,12 +18,12 @@
         $scope.isCategorySelected = false;
 
         //Upload thumbnails
-        $scope.ImagePreviewSrc1 = "/Content/img/CameraIcon.png"
-        $scope.ImagePreviewSrc2 = "/Content/img/CameraIcon.png"
-        $scope.ImagePreviewSrc3 = "/Content/img/CameraIcon.png"
-        $scope.ImagePreviewSrc4 = "/Content/img/CameraIcon.png"
-        $scope.ImagePreviewSrc5 = "/Content/img/CameraIcon.png"
-        $scope.ImagePreviewSrc6 = "/Content/img/CameraIcon.png"
+        $scope.ImagePreviewSrc1 = "/Content/img/CameraIcon.png";
+        $scope.ImagePreviewSrc2 = "/Content/img/CameraIcon.png";
+        $scope.ImagePreviewSrc3 = "/Content/img/CameraIcon.png";
+        $scope.ImagePreviewSrc4 = "/Content/img/CameraIcon.png";
+        $scope.ImagePreviewSrc5 = "/Content/img/CameraIcon.png";
+        $scope.ImagePreviewSrc6 = "/Content/img/CameraIcon.png";
 
 
         var listingImages = [];
@@ -30,25 +31,41 @@
 
 
         function addListing() {
+            /*var j = 0;
+            for (var i = 0; i < $scope.FilesToUpload.length; i++)
+                if (isValidSource($scope.FilesToUpload[i])) {
+                    listingImages[j] = $scope.FilesToUpload[i];
+                    j++;
+                }*/
+                    
+
+            console.log("Length to upload " + listingImages.length);
+            
             apiService.post('/api/listings/add', $scope.listing,
             addListingSucceded,
             addListingFailed);
         }
 
-        function showImagePreview(input) {
-            console.log("Previewing " + input.length);
+        //Show a browsed photo
+        function showImagePreview(input, position) {
+            console.log("Previewing " + input + " " + position);
 
-            if (input && input.length > 0) {
+            if (input) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    $scope.ImagePreviewSrc1 = '';
-                    $scope.ImagePreviewSrc1 = e.target.result;
+                    $scope.FilesToUpload[position] = '';
+                    $scope.FilesToUpload[position] = e.target.result;
                 }
 
-                reader.readAsDataURL(input[0]);
+                listingImages[position] = input;
+                reader.readAsDataURL(input);
             }
         }
 
+        function isValidSource(source)
+        {
+            return source && source != '';
+        }
 
         function addListingSucceded(response) {
             console.log($scope.listing.Title + ' has been submitted');
@@ -56,9 +73,27 @@
 
             //Upload images for the listing
             if (listingImages.length > 0) {
-                //fileUploadService.uploadImage(Image, $scope.listing.Id, redirectToEdit);
+                fileUploadService.uploadImage(listingImages, $scope.listing.Id, uploadSuccess,uploadFailure,uploadProgress);
+            }
+            else
+            {
+                console.log("Listings with images gets more visits");
             }
         }
+
+        function uploadSuccess(data, status, headers, config) {
+            console.log($scope.listing.Title + 'images  have been submitted');
+            $scope.UploadedFiles.push({ FileName: data.FileName, FilePath: data.LocalFilePath, FileLength: data.FileLength, Caption: data.Caption });
+        }
+
+        function uploadFailure(data, status, headers, config) {
+            console.log(data);
+        }
+
+        function uploadProgress(progress) {
+            console.log(progress);
+        }
+
 
         function addListingFailed(response) {
             console.log(response);

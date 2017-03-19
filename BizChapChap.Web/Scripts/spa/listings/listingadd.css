@@ -32,8 +32,14 @@
     margin-top: -50px;
 }
 
-.img-preview {
+.img-thumbnail {
     opacity: 0.5;
+    width: 75%;
+    height: 75%;
+    margin-top: 10px;
+}
+
+.img-preview {
     width: 75%;
     height: 75%;
     margin-top:10px;

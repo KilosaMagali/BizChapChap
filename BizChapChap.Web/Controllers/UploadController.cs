@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using BizChapChap.Web.Infrastructure;
+using BizChapChap.Web.Models;
+using BizChapChap.Web.Repository;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,8 +16,16 @@ using System.Web.Http.Filters;
 namespace BizChapChap.Web.Controllers
 {
     [RoutePrefix("api/Upload")]
-    public class UploadController : ApiController
+    public class UploadController : ApiControllerBase
     {
+        private IEntityBaseRepository<Listing> _listingRepository;
+        public UploadController(IEntityBaseRepository<Listing> listingRepository,
+                              IEntityBaseRepository<Error> _errorsRepository,
+                              IUnitOfWork _unitOfWork) : base(_errorsRepository, _unitOfWork)
+        {
+            _listingRepository = listingRepository;
+        }
+
             [Route("PostImage")]
             [MimeMultipart]
         public async Task<FileUploadResult> PostImage()
@@ -44,10 +55,10 @@ namespace BizChapChap.Web.Controllers
                 }
             }
 
-            var caption = multipartFormDataStreamProvider.FormData.GetValues("file[Caption]").FirstOrDefault();
+            var listingIdStr = multipartFormDataStreamProvider.FormData.GetValues("file[ListingId]").FirstOrDefault();
 
             // Create response
-            return new FileUploadResult
+            var response = new FileUploadResult
             {
                 LocalFilePath = _localFileName,
 
@@ -55,8 +66,35 @@ namespace BizChapChap.Web.Controllers
 
                 FileLength = new FileInfo(_localFileName).Length,
 
-                Caption = caption
+                ListingId = listingIdStr
             };
+
+
+            //Update listing with the image names => where imageName == null
+            int listingId;
+            if(int.TryParse(listingIdStr, out listingId))
+            {
+                var listing = _listingRepository.GetSingle(listingId);
+
+                //To do: find a better way to do this
+                if (listing.Photo1 == null)
+                    listing.Photo1 = response.FileName;
+                else if(listing.Photo2 == null)
+                    listing.Photo2 = response.FileName;
+                else if (listing.Photo3 == null)
+                    listing.Photo3 = response.FileName;
+                else if (listing.Photo4 == null)
+                    listing.Photo4 = response.FileName;
+                else if (listing.Photo5 == null)
+                    listing.Photo5 = response.FileName;
+                else
+                    listing.Photo6 = response.FileName;
+
+                _unitOfWork.Commit();
+            }
+            
+
+            return response;
         }
 
 
@@ -129,7 +167,7 @@ namespace BizChapChap.Web.Controllers
         public string LocalFilePath { get; set; }
         public string FileName { get; set; }
         public long FileLength { get; set; }
-        public string Caption { get; set; }
+        public string ListingId { get; set; }
     }
 
     public class UploadMultipartFormProvider : MultipartFormDataStreamProvider

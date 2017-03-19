@@ -45,4 +45,24 @@
 
 <div class="row container">
     <h3 class="page-header">Featured listings</h3>
+    <div class="container">
+        <div class="panel panel-default col-lg-3 col-md-3 col-sm-4 categoryblock" ng-repeat="featuredListing in featuredListings|limitTo:4">
+            <div class="panel-heading">
+                <strong>{{featuredListing.Title}}</strong>
+            </div>
+            <div class="panel-body">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object img-responsive" width="100" ng-src="../uploads/{{featuredListing.Photo1}}" />
+                    </a>
+                    <div class="media-body">
+                        <div class="lead" style="font-size:14px;color: crimson;width:500px;word-wrap:break-word">{{featuredListing.Price}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+               <span style="color:black">{{featuredListing.Date}}</span>
+            </div>
+         </div>
+    </div>
 </div>

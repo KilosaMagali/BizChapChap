@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form" ng-submit="addListing()">
         <div class="row container" id="formrowid">
             <section class="form-group" id="categoryid">
                 <h3 class="page-header">Category</h3>
@@ -46,14 +46,17 @@
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
                         <label for="image1">
-                            <img class="thumbnail img-preview" 
+                            <img class="thumbnail img-thumbnail" 
+                                 ng-hide="isValidSource(FilesToUpload[0])"
                                  src="{{ImagePreviewSrc1}}" 
                                  title="Click to upload">
+                            <img class="thumbnail img-preview" ng-show="isValidSource(FilesToUpload[0])" src="{{FilesToUpload[0]}}" title="Click to upload">
                         </label>
                         <input class="hiddenbrowsebutton" 
                                accept="image/*" 
-                               ng-model="ImagePreviewSrc1" 
-                               ng-change="showImagePreview(ImagePreviewSrc1)"
+                               ngf-select
+                               ng-model="FilesToUpload[0]" 
+                               ng-change="showImagePreview(FilesToUpload[0],0)"
                                type="file"
                                id="image1" />
                     </div>
@@ -61,42 +64,77 @@
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
                         <label for="image2">
-                            <img class="thumbnail img-preview"  src="{{ImagePreviewSrc2}}" title="Click to upload">
+                            <img class="thumbnail img-thumbnail" ng-hide="isValidSource(FilesToUpload[1])" src="{{ImagePreviewSrc2}}" title="Click to upload">
+                            <img class="thumbnail img-preview" ng-show="isValidSource(FilesToUpload[1])" src="{{FilesToUpload[1]}}" title="Click to upload">
                         </label>
-                        <input class="hiddenbrowsebutton" type="file" id="image2"/>
+                        <input class="hiddenbrowsebutton" 
+                               accept="image/*" 
+                               ngf-select
+                               ng-model="FilesToUpload[1]" 
+                               ng-change="showImagePreview(FilesToUpload[1],1)"
+                               type="file" 
+                               id="image2"/>
                     </div>
                 </div>
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
                         <label for="image3">
-                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc3}}" title="Click to upload">
+                            <img class="thumbnail img-thumbnail" ng-hide="isValidSource(FilesToUpload[2])" src="{{ImagePreviewSrc3}}" title="Click to upload">
+                            <img class="thumbnail img-preview" ng-show="isValidSource(FilesToUpload[2])" src="{{FilesToUpload[2]}}" title="Click to upload">
                         </label>
-                        <input class="hiddenbrowsebutton" type="file" id="image3" />
+                        <input class="hiddenbrowsebutton"
+                               accept="image/*" 
+                               ngf-select
+                               ng-model="FilesToUpload[2]" 
+                               ng-change="showImagePreview(FilesToUpload[2],2)"
+                               type="file"
+                               id="image3" />
                     </div>
                 </div>
 
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
                         <label for="image4">
-                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc4}}" title="Click to upload">
+                            <img class="thumbnail img-thumbnail" ng-hide="isValidSource(FilesToUpload[3])" src="{{ImagePreviewSrc4}}" title="Click to upload">
+                            <img class="thumbnail img-preview" ng-show="isValidSource(FilesToUpload[3])" src="{{FilesToUpload[3]}}" title="Click to upload">
                         </label>
-                        <input class="hiddenbrowsebutton" type="file" id="image4" />
+                        <input class="hiddenbrowsebutton"
+                               accept="image/*" 
+                               ngf-select
+                               ng-model="FilesToUpload[3]" 
+                               ng-change="showImagePreview(FilesToUpload[3],3)"
+                               type="file" 
+                               id="image4" />
                     </div>
                 </div>
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
                         <label for="image5">
-                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc5}}" title="Click to upload">
+                            <img class="thumbnail img-thumbnail" ng-hide="isValidSource(FilesToUpload[4])" src="{{ImagePreviewSrc5}}" title="Click to upload">
+                            <img class="thumbnail img-preview" ng-show="isValidSource(FilesToUpload[4])" src="{{FilesToUpload[4]}}" title="Click to upload">
                         </label>
-                        <input class="hiddenbrowsebutton" type="file" id="image5" />
+                        <input class="hiddenbrowsebutton" 
+                               accept="image/*" 
+                               ngf-select
+                               ng-model="FilesToUpload[4]" 
+                               ng-change="showImagePreview(FilesToUpload[4],4)"
+                               type="file" 
+                               id="image5" />
                     </div>
                 </div>
                 <div class="form-group col-lg-4 col-sm-4 col-xs-6">
                     <div class="main-img-preview">
                         <label for="image6">
-                            <img class="thumbnail img-preview" src="{{ImagePreviewSrc6}}" title="Click to upload">
+                            <img class="thumbnail img-thumbnail" ng-hide="isValidSource(FilesToUpload[5])" src="{{ImagePreviewSrc6}}" title="Click to upload">
+                            <img class="thumbnail img-preview" ng-show="isValidSource(FilesToUpload[5])" src="{{FilesToUpload[5]}}" title="Click to upload">
                         </label>
-                        <input class="hiddenbrowsebutton" type="file" id="image6" />
+                        <input class="hiddenbrowsebutton" 
+                               accept="image/*" 
+                               ngf-select
+                               ng-model="FilesToUpload[5]" 
+                               ng-change="showImagePreview(FilesToUpload[5],5)"
+                               type="file" 
+                               id="image6" />
                     </div>
                 </div>
 
@@ -133,3 +171,5 @@
         </div>
     </form>
 </div>
+
+

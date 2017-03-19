@@ -42,6 +42,24 @@ namespace BizChapChap.Web.Controllers
             });
         }
 
+
+        [HttpGet]
+        [Route("featured")]
+        public HttpResponseMessage GetFeatured(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var listings = _listingRepository.GetAll().OrderByDescending(m => m.Date).Take(6).ToList();
+
+                IEnumerable<ListingViewModel> listingsVM = Mapper.Map<IEnumerable<Listing>, IEnumerable<ListingViewModel>>(listings);
+
+                response = request.CreateResponse<IEnumerable<ListingViewModel>>(HttpStatusCode.OK, listingsVM);
+
+                return response;
+            });
+        }
+
         [HttpPost]
         [Route("add")]
         public HttpResponseMessage Add(HttpRequestMessage request, ListingViewModel listingViewModel)
@@ -69,6 +87,13 @@ namespace BizChapChap.Web.Controllers
 
                 return response;
             });
+        }
+
+
+        [Route("delete")]
+        public void Delete(int id)
+        {
+            
         }
     }
 }

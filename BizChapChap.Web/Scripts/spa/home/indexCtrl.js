@@ -16,6 +16,8 @@
 
         $scope.regions = [];
 
+        $scope.featuredListings = [];
+
 
         function loadCategories() {
             apiService.get('/api/categories/', null,
@@ -45,9 +47,24 @@
             console.log(response.data);
         }
 
+        function loadFeaturedListings() {
+            apiService.get('/api/listings/featured', null,
+                listingsLoadCompleted,
+                listingsLoadFailed);
+        }
+
+        function listingsLoadCompleted(response) {
+            $scope.featuredListings = response.data;
+        }
+
+        function listingsLoadFailed(response) {
+            console.log(response.data);
+        }
+
 
         loadCategories();
         loadRegions();
+        loadFeaturedListings();
     }
 
 })(angular.module('bizChapChap'));
