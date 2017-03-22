@@ -199,6 +199,7 @@
     <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Infrastructure\PaginationSet.cs" />
     <Compile Include="Infrastructure\Validators\CategoryViewModelValidator.cs" />
     <Compile Include="Infrastructure\Validators\SubCategoryViewModelValidator.cs" />
     <Compile Include="Migrations\201703172042445_Started afresh.cs" />
@@ -254,12 +255,15 @@
     <Content Include="Content\img\img_thumbnail_carside.png" />
     <Content Include="Content\img\img_thumbnail_carsidefront.png" />
     <Content Include="Content\img\main-bg.jpg" />
+    <Content Include="Content\owlcarousel\owl.carousel.min.css" />
+    <Content Include="Content\owlcarousel\owl.theme.default.min.css" />
     <Content Include="Scripts\spa\account\account.css" />
     <Content Include="Scripts\spa\home\home.css" />
     <Content Include="Scripts\spa\listings\add.html" />
     <Content Include="Scripts\spa\listings\listingadd.css" />
     <Content Include="Scripts\spa\listings\listingAddCtrl.js" />
     <Content Include="Scripts\spa\services\fileUploadService.js" />
+    <Content Include="Scripts\spa\services\searchService.js" />
     <Content Include="Scripts\spa\upload\fileUpload.css" />
     <Content Include="Scripts\vendors\angular-css.js" />
     <Content Include="Scripts\vendors\angular-file-upload-shim.js" />
@@ -315,6 +319,7 @@
     <Content Include="Scripts\vendors\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\vendors\modernizr-2.6.2.js" />
     <Content Include="Scripts\vendors\ng-file-upload.js" />
+    <Content Include="Scripts\vendors\owlcarouseljs\owl.carousel.min.js" />
     <Content Include="Scripts\vendors\respond.js" />
     <Content Include="Scripts\vendors\respond.min.js" />
     <Content Include="Web.config" />

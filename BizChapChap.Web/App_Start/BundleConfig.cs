@@ -27,6 +27,9 @@ namespace BizChapChap.Web
             bundles.Add(new Bundle("~/bundles/angularcss").Include(
                       "~/Scripts/vendors/angular-css.js"));
 
+            bundles.Add(new Bundle("~/bundles/owlcarousel").Include(
+                      "~/Scripts/vendors/owlcarouseljs/owl.carousel.min.js"));
+
 
             bundles.Add(new Bundle("~/bundles/spa").Include(
                 "~/Scripts/spa/app.js",
@@ -35,6 +38,7 @@ namespace BizChapChap.Web
                 "~/Scripts/spa/home/indexCtrl.js",
                 "~/Scripts/spa/services/apiService.js",
                 "~/Scripts/spa/services/fileUploadService.js",
+                "~/Scripts/spa/services/searchService.js",
                 "~/Scripts/spa/account/loginCtrl.js",
                 "~/Scripts/spa/upload/fileUploadCtrl.js",
                 "~/Scripts/spa/listings/listingAddCtrl.js"
@@ -44,7 +48,9 @@ namespace BizChapChap.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/owlcarousel/owl.carousel.min.css",
+                      "~/Content/owlcarousel/owl.theme.default.min.css"));
         }
     }
 }

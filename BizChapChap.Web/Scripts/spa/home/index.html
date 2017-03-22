@@ -1,11 +1,11 @@
 ﻿<div class="row container" id="header">
-        <form class="form-inline" role="form">
+        <form class="form-inline" role="form" ng-submit="search()">
             <select class="form-control"
                     ng-model="searchItem.Id"
                     ng-options="option.Id as option.Name for option in regions"/>
-            <input type="text" class="form-control" placeholder="Looking for ....">
+            <input type="text" class="form-control" ng-model="searchItem.searchPhrase" placeholder="Looking for ....">
             <select class="form-control" 
-                    ng-model="searchItem.CategoryRefId"
+                    ng-model="searchItem.subCategoryId"
                     ng-options="option.Id as option.Name for option in categories" />
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
@@ -43,26 +43,40 @@
 </div>
 
 
+
 <div class="row container">
-    <h3 class="page-header">Featured listings</h3>
+    <h3 class="title-3 page-header">
+        Featured Listings
+
+        <a id="nextItem" class="link  pull-right carousel-nav">
+            &nbsp;  next<i class="fa fa-chevron-right"></i>
+        </a>
+        <span class="pull-right">|</span>
+        <a id="prevItem" class="link pull-right carousel-nav">
+            prev &nbsp; <i class="fa fa-chevron-left"></i>
+        </a>
+
+    </h3>
     <div class="container">
-        <div class="panel panel-default col-lg-3 col-md-3 col-sm-4 categoryblock" ng-repeat="featuredListing in featuredListings|limitTo:4">
-            <div class="panel-heading">
-                <strong>{{featuredListing.Title}}</strong>
-            </div>
-            <div class="panel-body">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object img-responsive" width="100" ng-src="../uploads/{{featuredListing.Photo1}}" />
-                    </a>
-                    <div class="media-body">
-                        <div class="lead" style="font-size:14px;color: crimson;width:500px;word-wrap:break-word">{{featuredListing.Price}}</div>
+        <data-owl-carousel class="owl-carousel" data-options="{navigation: true, pagination: false, rewindNav : false}">
+            <div owl-carousel-item="" ng-repeat="featuredListing in featuredListings" class="item categoryblock">
+                <div class="panel panel-default">
+                    <div class="media">
+                        <a class="text-center" href="#">
+                            <img class="media-object img-responsive" width="100" ng-src="../uploads/{{featuredListing.Photo1}}" />
+                        </a>
                     </div>
+                    <div class="price" style="font-size:14px;color: crimson;width:500px;word-wrap:break-word">{{featuredListing.Price}} TShs</div>
+                    <span>
+                        <strong>{{featuredListing.Title}}</strong>
+                    </span>
+                    <span style="color:black">{{formatDateListing(featuredListing.Date)}}</span>
                 </div>
             </div>
-            <div class="panel-footer">
-               <span style="color:black">{{featuredListing.Date}}</span>
-            </div>
-         </div>
+        </data-owl-carousel>
+
     </div>
 </div>
+
+
+
